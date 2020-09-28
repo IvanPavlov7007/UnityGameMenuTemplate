@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+
+    bool oneFrameAfterEnableWaited = true;
+
+    private void OnEnable()
+    {
+        oneFrameAfterEnableWaited = false;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!oneFrameAfterEnableWaited)
+            oneFrameAfterEnableWaited = true;
+
+        if (Input.GetKeyDown(KeyCode.Escape) && oneFrameAfterEnableWaited)
         {
             Resume();
         }
