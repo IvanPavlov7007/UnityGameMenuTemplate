@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,6 +56,28 @@ public static class CommonTools
                 return i;
         }
         throw new System.Exception("WeightsSum is not equal to the sum of weights");
+    }
+
+    public static int RandomIndex(int[] weights)
+    {
+        int sum = 0;
+        foreach(var weight in weights)
+        {
+            sum += weight;
+        }
+        return RandomIndex(weights, sum);
+    }
+
+    public static T RandomObject<T>(T[] elements)
+    {
+        return elements[Random.Range(0, elements.Length)];        
+    }
+
+    public static T RandomObject<T>(T[] elements, int[] weights)
+    {
+        if (weights.Length != elements.Length)
+            throw new System.Exception("weights count doesn't match elements count");
+        return elements[RandomIndex(weights)];
     }
 
     public static Vector2 RotateDir(Vector2 dir, float angle)
