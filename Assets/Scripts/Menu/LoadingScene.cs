@@ -2,6 +2,9 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+/// <summary>
+/// Use for asset management during loading
+/// </summary>
 public class LoadingScene : MonoBehaviour
 {
     public float minLoadingTime;
@@ -17,6 +20,8 @@ public class LoadingScene : MonoBehaviour
 
     IEnumerator LoadScene()
     {
+        //Placeholder process:
+
         yield return null;
         if(IntersceneData.exit)
         {

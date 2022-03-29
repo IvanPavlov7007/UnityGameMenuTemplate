@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Not used, ask Ivan
+/// </summary>
 public class SubMenu : MonoBehaviour
 {
 

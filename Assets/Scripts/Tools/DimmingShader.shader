@@ -1,5 +1,15 @@
 ﻿Shader "PostProcess/DimmingShader"
 {
+	/*
+	
+		Ivan's shader for the eye-closing effect
+
+		2 Uses:
+		1) Top-Down + Bottom-Up
+		2) Radial as well, but needs Distance Map
+	
+	*/
+
 	Properties
 	{
 		_MainTex("Texture", 2D) = "white" {}

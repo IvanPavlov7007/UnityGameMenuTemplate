@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
+
+/// <summary>
+/// not important, ask Ivan
+/// </summary>
 [Serializable]
 public class TextControlClip : PlayableAsset, ITimelineClipAsset
 {

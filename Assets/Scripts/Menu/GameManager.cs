@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Singleton, input for the pause 
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;

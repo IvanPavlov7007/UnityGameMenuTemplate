@@ -4,6 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 
+
+/// <summary>
+/// not important, ask Ivan
+/// </summary>
 [System.Serializable]
 public class TextControlBehaviour : PlayableBehaviour
 {

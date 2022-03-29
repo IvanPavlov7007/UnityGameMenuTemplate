@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Ivan's handy lifehack methods for every life situation
+/// ...and some comments
+/// </summary>
 public static class CommonTools
 {
     public static bool HitsContainsThisTransform(Transform transform, RaycastHit[] hits, out RaycastHit hit)
@@ -100,7 +105,7 @@ public static class CommonTools
     }
 
 
-    //Hint-Code, Formula, That actually is only abstract
+    //Copy-past this template into your script
     // TO PROVE: NEVER  use static coroutines, because they can't nest 
     static IEnumerator a_to_b_Animation(bool to_b, float speed)
     {
