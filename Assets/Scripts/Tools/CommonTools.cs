@@ -9,6 +9,11 @@ using UnityEngine;
 /// </summary>
 public static class CommonTools
 {
+    public static float truncateFloat(float orig, float truncate_value = 100f)
+    {
+        return Mathf.Round(orig * truncate_value) / truncate_value;
+    }
+
     public static bool HitsContainsThisTransform(Transform transform, RaycastHit[] hits, out RaycastHit hit)
     {
         hit = System.Array.Find(hits, obj => obj.transform == transform);
@@ -32,6 +37,17 @@ public static class CommonTools
     public static Vector3 zPlaneVector(Vector3 vector, float z)
     {
         return new Vector3(vector.x, vector.y, z);
+    }
+
+    public static Transform[] getChildren(Transform parent)
+    {
+        int count = parent.childCount;
+        Transform[] children = new Transform[count];
+        for (int i = 0; i <count; i++)
+        {
+            children[i] = parent.GetChild(i);
+        }
+        return children;
     }
 
     public static Vector3 GetPerpendicularPointFromPointToLine(Vector3 point, Vector3 lineA, Vector3 lineB)
