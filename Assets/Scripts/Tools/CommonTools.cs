@@ -39,6 +39,23 @@ public static class CommonTools
         return new Vector3(vector.x, vector.y, z);
     }
 
+    public static Vector3 MaxVector(Vector3 a, Vector3 b)
+    {
+        if (a.magnitude >= b.magnitude)
+            return a;
+        return b;
+    }
+
+    public static float linearEquation(float x, float k, float b)
+    {
+        return x * k + b;
+    }
+
+    public static float quadraticEquation(float x, float a, float b, float c)
+    {
+        return x * x * a + x * b + x * c;
+    }
+
     public static Transform[] getChildren(Transform parent)
     {
         int count = parent.childCount;
@@ -58,6 +75,11 @@ public static class CommonTools
         return lineB + AB.normalized * (dotB / AB.magnitude);
     }
 
+    public static float getCurrentAngleRadians(Vector2 direction)
+    {
+        return Vector2.SignedAngle(Vector3.right, direction) * Mathf.PI * 0.00555f;
+    }
+
     //public static Vector2 GetPerpendicularPointFromPointToLine(Vector2 point, Vector2 lineA, Vector2 lineB)
     //{
     //    Vector2 AB = lineB - lineA;
@@ -65,6 +87,7 @@ public static class CommonTools
     //    float dotB = Vector2.Dot(AB, BC);
     //    return lineB + AB.normalized * (dotB / AB.magnitude);
     //}
+
 
     public static int RandomIndex(int[] weights, int weightsSum)
     {
@@ -120,6 +143,21 @@ public static class CommonTools
         return Mathf.Atan((x - 0.5f) * a) * 0.5f / Mathf.Atan(0.5f * a) + 0.5f;
     }
 
+
+    public static float ClampRepeat(float x,float xMin, float xMax)
+    {
+        if (x > xMax)
+        {
+            float span = xMax - xMin;
+            x = x - span * Mathf.Floor((x - xMin) / span);
+        }
+        else if (x < xMin)
+        {
+            float span = xMax - xMin;
+            x = x + span * Mathf.Floor((xMax - x) / span);
+        }
+        return x;
+    }
 
     //Copy-past this template into your script
     // TO PROVE: NEVER  use static coroutines, because they can't nest 
